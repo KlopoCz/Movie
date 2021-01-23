@@ -1,8 +1,33 @@
 .FooterContiner {
   position: absolute;
-  bottom: -110vh;
+  bottom: -100vh;
   width: 100vw;
-  height: 10vh;
+  height: 5vh;
   z-index: 2;
   background: #111111;
+}
+.GitHubFooter {
+  span {
+    display: block;
+    background-image: url(./../../img/GitHub.svg);
+    width: 25px;
+    height: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  h1 {
+  }
+}
+.LogoFooter {
+  span {
+    background-image: url(./../../img/logo.svg);
+    width: 200px;
+    height: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  h1 {
+  }
 }
