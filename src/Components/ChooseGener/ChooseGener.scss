@@ -1,0 +1,30 @@
+.Container {
+  position: absolute;
+  top: 100vh;
+}
+.BlackFadeGener {
+  position: absolute;
+  width: 100vw;
+  background: #111111;
+  opacity: 0.8;
+  z-index: -1;
+  height: 100vh;
+}
+.TitleGener {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 33px;
+  line-height: 39px;
+  text-align: center;
+  width: 100vw;
+  margin-top: 0;
+  padding-top: 50px;
+  margin-bottom: 40px;
+}
+.GenerContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px 10% 10px 10%;
+  justify-content: center;
+}

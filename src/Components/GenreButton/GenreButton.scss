@@ -1,0 +1,20 @@
+.GenreButton {
+  background: #111111;
+  border-radius: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+  margin: 5px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  span {
+    background-image: url(./../../img/circle.svg);
+    width: 13px;
+    height: 13px;
+    margin-right: 10px;
+  }
+}

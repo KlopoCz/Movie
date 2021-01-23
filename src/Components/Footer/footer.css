@@ -1,0 +1,9 @@
+.FooterContiner {
+  position: absolute;
+  bottom: -110vh;
+  width: 100vw;
+  height: 10vh;
+  z-index: 2;
+  background: #111111;
+}
+/*# sourceMappingURL=footer.css.map */
