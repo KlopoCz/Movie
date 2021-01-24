@@ -5,29 +5,55 @@
   height: 5vh;
   z-index: 2;
   background: #111111;
+  display: flex;
+  justify-content: space-evenly;
 }
 .GitHubFooter {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
   span {
     display: block;
     background-image: url(./../../img/GitHub.svg);
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-right: 20px;
   }
   h1 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 39px;
+    text-align: center;
   }
 }
 .LogoFooter {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+
   span {
+    display: block;
     background-image: url(./../../img/logo.svg);
-    width: 200px;
-    height: 25px;
+    width: 150px;
+    height: 18px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-left: 20px;
   }
   h1 {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 39px;
+    text-align: center;
   }
 }

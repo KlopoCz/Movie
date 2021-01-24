@@ -4,14 +4,22 @@ import "./footer.css";
 const Footer = () => {
   return (
     <div className="FooterContiner">
-      <div className="LogoFooter">
+      <a
+        href="https://www.themoviedb.org/"
+        className="LogoFooter"
+        target="_blank"
+      >
         <h1>site made with</h1>
         <span></span>
-      </div>
-      <div className="GitHubFooter">
+      </a>
+      <a
+        href="https://github.com/KlopoCz/Movie"
+        className="GitHubFooter"
+        target="_blank"
+      >
         <span></span>
         <h1>GitHub</h1>
-      </div>
+      </a>
     </div>
   );
 };

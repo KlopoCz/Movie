@@ -15,13 +15,13 @@
 .TitleGener {
   font-style: normal;
   font-weight: normal;
-  font-size: 33px;
+  font-size: 25px;
   line-height: 39px;
   text-align: center;
   width: 100vw;
   margin-top: 0;
-  padding-top: 50px;
-  margin-bottom: 40px;
+  padding-top: 20px;
+  margin-bottom: 20px;
 }
 
 .GenerContainer {
@@ -39,4 +39,4 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
-/*# sourceMappingURL=ChooseGener.css.map */
+/*# sourceMappingURL=Choosegener.css.map */
