@@ -6,10 +6,10 @@
 .BlackFadeGener {
   position: absolute;
   width: 100vw;
-  background: #111111;
-  opacity: 0.8;
+  background: #000000;
+  opacity: 1;
   z-index: -1;
-  height: 100vh;
+  height: 100%;
 }
 
 .TitleGener {
@@ -38,5 +38,20 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.MovieCardsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 /*# sourceMappingURL=Choosegener.css.map */

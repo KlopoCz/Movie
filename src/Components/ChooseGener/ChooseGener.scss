@@ -5,10 +5,10 @@
 .BlackFadeGener {
   position: absolute;
   width: 100vw;
-  background: #111111;
-  opacity: 0.8;
+  background: #000000;
+  opacity: 1;
   z-index: -1;
-  height: 100vh;
+  height: 100%;
 }
 .TitleGener {
   font-style: normal;
@@ -27,4 +27,10 @@
   flex-wrap: wrap;
   margin: 10px 10% 10px 10%;
   justify-content: center;
+}
+.MovieCardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
 }

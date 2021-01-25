@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./HeroSection.css";
 import { Context } from "./../Context";
+import SvgCircle from "./../SvgCircle/SvgCircle";
 
 const HeroSection = () => {
   const [bestMovie, setBestMovie] = useState();
@@ -58,45 +59,11 @@ const HeroSection = () => {
               ({bestMovieDet.release_date.substring(0, 4)})
             </h1>
             <div className="SVGcontainer">
-              <svg
-                className="circle-chart"
-                // viewBox="0 0 180 180"
-                width="64"
-                height="64"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle
-                  className="circle-chart__background"
-                  stroke="#111111"
-                  strokeWidth="5"
-                  fill="none"
-                  cx="32"
-                  cy="32"
-                  r="25"
-                />
-                <circle
-                  className="circle-chart__circle"
-                  stroke="#00acc1"
-                  strokeWidth="5"
-                  strokeDasharray={radius}
-                  strokeLinecap="round"
-                  fill="none"
-                  cx="32"
-                  cy="32"
-                  r="25"
-                />
-                <text
-                  className="circle-chart__percent"
-                  x="32"
-                  y="40"
-                  alignmentBaseline="central"
-                  textAnchor="middle"
-                  fontSize="22"
-                  fill="#ffffff"
-                >
-                  {bestMovieDet.vote_average}
-                </text>
-              </svg>
+              <SvgCircle
+                radius={radius}
+                vote_average={bestMovieDet.vote_average}
+                SvgClass={"circle-chart"}
+              ></SvgCircle>
               <h1 className="score">User Score </h1>
             </div>
             <p className="overview">

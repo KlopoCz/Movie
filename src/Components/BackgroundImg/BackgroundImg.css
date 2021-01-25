@@ -1,6 +1,6 @@
 .BackgroundImg {
   position: fixed;
-  width: 100%;
+  width: calc(100vw - 650px);
   height: 100vh;
   background-size: cover;
   background-position: center;

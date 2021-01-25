@@ -1,1 +1,46 @@
-/* No CSS *//*# sourceMappingURL=MovieCard.css.map */
+.MovieCardContainer {
+  background: #111111;
+  border-radius: 41px;
+  width: 230px;
+  height: 351px;
+  margin: 10px;
+}
+
+.CardImg {
+  width: 100%;
+  height: 241px;
+  border-radius: 40px 40px 0px 0px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.CardTitle {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  position: relative;
+  bottom: 13%;
+}
+
+.CardDate {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 180.18%;
+  text-align: center;
+  letter-spacing: 0.105em;
+  position: relative;
+  bottom: 13%;
+}
+
+.SvgClass {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+/*# sourceMappingURL=MovieCard.css.map */

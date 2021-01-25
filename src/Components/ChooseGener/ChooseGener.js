@@ -8,6 +8,7 @@ const ChooseGener = () => {
   const [id, setId] = useState();
   const [movies, setMovies] = useState([]);
   const [num, setNum] = useState(-2);
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
     fetch(
@@ -26,6 +27,7 @@ const ChooseGener = () => {
       .then((data) => {
         setMovies([]);
         setMovies((old) => old.concat(data.results));
+        console.log(data);
 
         fetch(
           `https://api.themoviedb.org/3/discover/movie?api_key=de27f42e716edbcbf3d004f4f825bc85&with_genres=${id}&page=${
@@ -44,8 +46,6 @@ const ChooseGener = () => {
               .then((response) => response.json())
               .then((data) => {
                 setMovies((old) => old.concat(data.results));
-
-                console.log(data);
               });
           });
       });
@@ -54,7 +54,7 @@ const ChooseGener = () => {
   const getSelectectCallBack = (inedx) => {
     console.log(inedx);
     setId(inedx);
-    setNum(num + 3);
+    setNum(1);
     console.log(movies);
   };
   return (
@@ -75,7 +75,14 @@ const ChooseGener = () => {
                 ></GenreButton>
               );
             })}
-            {}
+            <div className="MovieCardsContainer">
+              {movies.length === 60
+                ? movies.map((el, index) => {
+                    if (index < (page + 1) * 12 && index >= page * 12)
+                      return <MovieCard key={index} el={el}></MovieCard>;
+                  })
+                : ""}
+            </div>
           </div>
         </div>
       ) : (
