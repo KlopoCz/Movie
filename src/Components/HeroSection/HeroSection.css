@@ -8,7 +8,6 @@
 }
 
 .BlackFade {
-  position: absolute;
   height: 100vh;
   max-width: 650px;
   background: #111111;
@@ -25,7 +24,8 @@
           align-items: center;
   text-align: center;
   letter-spacing: 0.08em;
-  margin: 50px 25px 0px 25px;
+  padding: 50px 25px 0px 25px;
+  margin-top: 0;
 }
 
 .year {

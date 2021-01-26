@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import HeroSection from "./../HeroSection/HeroSection";
 import ChooseGener from "./../ChooseGener/ChooseGener";
 import BackgroundImg from "./../BackgroundImg/BackgroundImg";
+import "./HomePage.css";
 
 import { Context } from "./../Context";
 
@@ -10,9 +11,11 @@ const HomePage = () => {
   return (
     <div>
       <Context.Provider value={{ img, setImg }}>
-        <HeroSection></HeroSection>
+        <div className="HomeCont">
+          <HeroSection></HeroSection>
+          <BackgroundImg></BackgroundImg>
+        </div>
         <ChooseGener></ChooseGener>
-        <BackgroundImg></BackgroundImg>
       </Context.Provider>{" "}
     </div>
   );

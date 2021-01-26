@@ -78,8 +78,7 @@ const ChooseGener = () => {
             <div className="MovieCardsContainer">
               {movies.length === 60
                 ? movies.map((el, index) => {
-                    if (index < (page + 1) * 12 && index >= page * 12)
-                      return <MovieCard key={index} el={el}></MovieCard>;
+                    return <MovieCard key={index} el={el}></MovieCard>;
                   })
                 : ""}
             </div>
