@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,uBAAuB,CAAC;EACtB,KAAK,EAAE,MAAM;EACb,MAAM,EAAE,MAAM;EACd,eAAe,EAAE,KAAK;EACtB,mBAAmB,EAAE,MAAM;CAC5B;;AACD,AAAA,aAAa,CAAC;EACZ,KAAK,EAAE,MAAM;EACb,MAAM,EAAE,MAAM;EACd,eAAe,EAAE,KAAK;CACvB",
+    "sources": [
+        "MoviePage.scss"
+    ],
+    "names": [],
+    "file": "MoviePage.css"
+}

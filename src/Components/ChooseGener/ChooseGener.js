@@ -76,11 +76,15 @@ const ChooseGener = () => {
               );
             })}
             <div className="MovieCardsContainer">
-              {movies.length === 60
-                ? movies.map((el, index) => {
-                    return <MovieCard key={index} el={el}></MovieCard>;
-                  })
-                : ""}
+              {movies.length === 60 ? (
+                movies.map((el, index) => {
+                  return <MovieCard key={index} el={el}></MovieCard>;
+                })
+              ) : (
+                <h1 className="description">
+                  ↑ click on some gener to see all of your favourite movies ↑
+                </h1>
+              )}
             </div>
           </div>
         </div>

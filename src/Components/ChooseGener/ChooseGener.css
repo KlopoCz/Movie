@@ -1,5 +1,6 @@
 .Container {
   background: #000000;
+  min-height: 100vh;
 }
 
 .BlackFadeGener {
@@ -12,14 +13,14 @@
 
 .TitleGener {
   font-style: normal;
-  font-weight: normal;
-  font-size: 25px;
+  font-weight: bold;
+  font-size: 35px;
   line-height: 39px;
   text-align: center;
   width: 100vw;
   margin-top: 0;
-  padding-top: 20px;
-  margin-bottom: 20px;
+  padding-top: 60px;
+  margin-bottom: 60px;
 }
 
 .GenerContainer {
@@ -32,10 +33,13 @@
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 10px 5% 10px 5%;
+  margin: 0px 10% 0px 10%;
+  margin: auto;
+  padding-bottom: 20px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  max-width: 1365px;
 }
 
 .MovieCardsContainer {
@@ -51,5 +55,11 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  margin-top: 40px;
 }
-/*# sourceMappingURL=Choosegener.css.map */
+
+.description {
+  margin-top: 30%;
+  font-weight: normal;
+}
+/*# sourceMappingURL=ChooseGener.css.map */
