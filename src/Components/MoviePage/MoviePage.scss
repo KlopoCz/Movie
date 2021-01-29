@@ -1,11 +1,222 @@
 .MoviePageBackgroundImg {
-  width: 1000px;
-  height: 1000px;
+  position: relative;
   background-size: cover;
   background-position: center;
+  min-height: 95vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
 }
 .MoviePageImg {
-  width: 1000px;
-  height: 1000px;
+  width: 380px;
+  height: 560px;
   background-size: cover;
+  position: relative;
+  z-index: 2;
+  margin-right: 10%;
+  flex-shrink: 0;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.MoviePgeContentContainer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 10%;
+}
+.MoviePageTitleContainer {
+  span {
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 30px;
+    line-height: 48px;
+
+    letter-spacing: 0.08em;
+  }
+}
+.MoviePageTitle {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 48px;
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  margin-right: 20px;
+
+  letter-spacing: 0.08em;
+  margin-bottom: 0;
+}
+.MoviePageStatus {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 180.18%;
+
+  letter-spacing: 0.105em;
+  margin: 0;
+}
+.StatusGenerCont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.GenersContainerMovie {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    li {
+      list-style-type: none;
+      margin: 8px 5px;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 158.18%;
+
+      letter-spacing: 0.08em;
+    }
+  }
+}
+.MoviePageCircle {
+}
+.MoviePageUserScoreContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+  h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 158.18%;
+    margin-left: 20px;
+    letter-spacing: 0.08em;
+  }
+}
+.MovieButtonsContainer {
+  display: flex;
+  flex-direction: row;
+}
+.first {
+  background-image: url(./../../img/Plus.svg);
+  height: 35px;
+  width: 35px;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  margin: 30px 30px 10px 30px;
+}
+.last {
+  background-image: url(./../../img/Play.svg);
+  height: 35px;
+  width: 35px;
+  background-size: auto;
+  background-position: center;
+  display: block;
+  margin: 30px 30px 10px 30px;
+}
+.MoviePageButtonsRateContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.MoviePageOverview {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 180.18%;
+
+  letter-spacing: 0.105em;
+  margin: 0px;
+}
+.MoviePageOverviewP {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 120%;
+
+  letter-spacing: 0.105em;
+}
+.MoviePageTagline {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 180.18%;
+
+  letter-spacing: 0.105em;
+}
+.MoreInfoContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 5px 20px 5px 0px;
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      h1 {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 180.18%;
+
+        letter-spacing: 0.105em;
+      }
+      h2 {
+        font-style: italic;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 180.18%;
+
+        letter-spacing: 0.105em;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .MoviePageBackgroundImg {
+    flex-direction: column;
+    text-align: center;
+  }
+  .StatusGenerCont {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .MoreInfoContainer {
+    div {
+      justify-content: center;
+    }
+  }
+  .MoviePageButtonsRateContainer {
+    justify-content: center;
+  }
+  .GenersContainerMovie {
+    padding: 0;
+  }
 }

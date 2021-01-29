@@ -25,17 +25,20 @@ const MoviePage = ({ location }) => {
         <div>
           <div
             style={{
-              backgroundImage: `url(https://image.tmdb.org/t/p/original/${movieData.backdrop_path}) `,
+              backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${movieData.backdrop_path}) `,
             }}
             className="MoviePageBackgroundImg"
           >
-            <div>
-              <div>
-                <h1>{movieData.original_title}</h1>
-                <h1>{movieData.release_date}</h1>
+            <div className="MoviePgeContentContainer">
+              <div className="MoviePageTitleContainer">
+                <h1 className="MoviePageTitle">
+                  {movieData.original_title}
+                  {"   "}
+                  <span>({movieData.release_date.substring(0, 4)})</span>
+                </h1>
               </div>
-              <div>
-                <h1>{movieData.status}</h1>
+              <div className="StatusGenerCont">
+                <h1 className="MoviePageStatus">{movieData.status}</h1>
                 <ul className="GenersContainerMovie">
                   {movieData.genres.length > 0 ? (
                     <div>
@@ -78,52 +81,61 @@ const MoviePage = ({ location }) => {
                   )}
                 </ul>
               </div>
-              <div>
-                <SvgCircle
-                  radius={radius}
-                  vote_average={movieData.vote_average}
-                  SvgClass={"MoviePageCircle"}
-                ></SvgCircle>
-                <h1>User Score</h1>
+              <div className="MoviePageButtonsRateContainer">
+                <div className="MoviePageUserScoreContainer">
+                  <SvgCircle
+                    radius={radius}
+                    vote_average={movieData.vote_average}
+                    SvgClass={"MoviePageCircle"}
+                  ></SvgCircle>
+                  <h1>User Score</h1>
+                </div>
+                <div className="MovieButtonsContainer">
+                  <span className="first"></span>
+                  <span className="last"></span>
+                </div>
               </div>
-              <div>
-                <span></span>
-                <span></span>
-                <h1>Watch Trailer</h1>
-              </div>
-              <h1>Overview</h1>
-              <p>{movieData.overview}</p>
-              <h2>{movieData.tagline}</h2>
-              <div>
+              <h1 className="MoviePageOverview">Overview</h1>
+              <p className="MoviePageOverviewP">{movieData.overview}</p>
+              <h2 className="MoviePageTagline">{movieData.tagline}</h2>
+              <div className="MoreInfoContainer">
                 <div>
-                  <h2>Relised</h2>
-                  <h1>{movieData.release_date}</h1>
+                  <div>
+                    <h2>Relised:</h2>
+                    <h1>{movieData.release_date}</h1>
+                  </div>
+                  <div>
+                    <h2>Time:</h2>
+                    <h1>{movieData.runtime}</h1>
+                  </div>
+                  <div>
+                    <h2>Company:</h2>
+                    <h1>
+                      {movieData.production_companies[0]
+                        ? movieData.production_companies[0].name
+                        : ""}
+                    </h1>
+                  </div>
                 </div>
                 <div>
-                  <h2>Time</h2>
-                  <h1>{movieData.runtime}</h1>
-                </div>
-                <div>
-                  <h2>Company</h2>
-                  <h1>{movieData.production_companies[0].name}</h1>
-                </div>
-                <div>
-                  <h2>Language</h2>
-                  <h1>{movieData.original_language}</h1>
-                </div>
-                <div>
-                  <h2>Budget</h2>
-                  <h1>{movieData.budget}</h1>
-                </div>
-                <div>
-                  <h2>Revenue</h2>
-                  <h1>{movieData.revenue}</h1>
+                  <div>
+                    <h2>Language:</h2>
+                    <h1>{movieData.original_language}</h1>
+                  </div>
+                  <div>
+                    <h2>Budget:</h2>
+                    <h1>{movieData.budget}</h1>
+                  </div>
+                  <div>
+                    <h2>Revenue:</h2>
+                    <h1>{movieData.revenue}</h1>
+                  </div>
                 </div>
               </div>
             </div>
             <div
               style={{
-                backgroundImage: `url(https://image.tmdb.org/t/p/original/${movieData.poster_path}) `,
+                backgroundImage: `url(https://image.tmdb.org/t/p/w400/${movieData.poster_path}) `,
               }}
               className="MoviePageImg"
             ></div>
