@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SvgCircle from "./../SvgCircle/SvgCircle";
+import NavBar from "./../NavBar/NavBar";
 import "./MoviePage.css";
 
 const MoviePage = ({ location }) => {
@@ -21,6 +22,7 @@ const MoviePage = ({ location }) => {
   }, []);
   return (
     <div>
+      <NavBar showSearchBar={true}></NavBar>
       {movieData ? (
         <div>
           <div

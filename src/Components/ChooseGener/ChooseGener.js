@@ -9,6 +9,7 @@ const ChooseGener = () => {
   const [movies, setMovies] = useState([]);
   const [num, setNum] = useState(-2);
   const [page, setPage] = useState(0);
+  const [search, setSearch] = useState();
 
   useEffect(() => {
     fetch(
@@ -19,6 +20,22 @@ const ChooseGener = () => {
         setAllGenre(data.genres);
       });
   }, []);
+  useEffect(() => {
+    setMovies([]);
+    if (search) {
+      fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=de27f42e716edbcbf3d004f4f825bc85&language=en-US&query=${search}&page=1&include_adult=false`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setMovies([]);
+          if (data) {
+            setMovies(data.results);
+            console.log(data);
+          }
+        });
+    }
+  }, [search]);
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/discover/movie?api_key=de27f42e716edbcbf3d004f4f825bc85&with_genres=${id}&page=${num}`
@@ -62,7 +79,16 @@ const ChooseGener = () => {
       {allGenre ? (
         <div>
           <div className="BlackFadeGener"></div>
-          <h1 className="TitleGener">Choose Your Favourite Gener</h1>
+          <input
+            className="SearchBar"
+            onChange={(e) => {
+              setSearch(e.target.value);
+              console.log(search);
+            }}
+            value={search}
+            placeholder="Search for something"
+          ></input>
+          {/* <h1 className="TitleGener">Choose Your Favourite Gener</h1> */}
           <div className="GenerContainer">
             {allGenre.map((element) => {
               return (
@@ -76,7 +102,7 @@ const ChooseGener = () => {
               );
             })}
             <div className="MovieCardsContainer">
-              {movies.length === 60 ? (
+              {movies.filter((item) => item).length > 1 ? (
                 movies.map((el, index) => {
                   return <MovieCard key={index} el={el}></MovieCard>;
                 })

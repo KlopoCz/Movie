@@ -4,6 +4,8 @@
   margin: auto;
   display: flex;
   align-items: center;
+  background: #111111;
+  padding: 0px 10%;
   a {
     color: white;
     text-decoration: none;
@@ -12,7 +14,7 @@
   a:nth-child(1) {
     margin-left: 0px;
   }
-  div {
+  .SeachBar {
     margin-left: auto;
     background: #5cc3dc;
     border-radius: 20px;

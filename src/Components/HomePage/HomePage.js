@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import HeroSection from "./../HeroSection/HeroSection";
-import ChooseGener from "./../ChooseGener/ChooseGener";
+import ShowPopular from "./../ShowPopular/ShowPopular";
 import BackgroundImg from "./../BackgroundImg/BackgroundImg";
+import NavBar from "./../NavBar/NavBar";
 import "./HomePage.css";
 
 import { Context } from "./../Context";
@@ -15,7 +16,8 @@ const HomePage = () => {
           <HeroSection></HeroSection>
           <BackgroundImg></BackgroundImg>
         </div>
-        <ChooseGener></ChooseGener>
+        <NavBar showSearchBar={true}></NavBar>
+        <ShowPopular></ShowPopular>
       </Context.Provider>{" "}
     </div>
   );

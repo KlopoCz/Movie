@@ -24,11 +24,12 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0px 10% 0px 10%;
-  margin: auto;
+  margin: 20px auto 0px auto;
+  max-width: 80%;
+
   padding-bottom: 20px;
+
   justify-content: center;
-  max-width: 1365px;
 }
 .MovieCardsContainer {
   display: flex;
@@ -40,4 +41,26 @@
 .description {
   margin-top: 30%;
   font-weight: normal;
+}
+.SearchBar {
+  max-width: 80%;
+
+  width: 100%;
+  height: 50px;
+  background: #111111;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 25px;
+  padding: 0px 20px;
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: white;
+    font-size: 25px;
+  }
 }

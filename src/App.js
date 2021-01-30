@@ -1,7 +1,8 @@
 import HomePage from "./Components/HomePage/HomePage";
 import Footer from "./Components/Footer/Footer";
 import MoviePage from "./Components/MoviePage/MoviePage";
-import NavBar from "./Components/NavBar/NavBar";
+import MovieSearch from "./Components/MovieSearch/MovieSearch";
+
 import "./App.css";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
@@ -9,10 +10,10 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <NavBar></NavBar>
         <Route path="/" component={HomePage} exact></Route>
 
         <Route path="/movie" component={MoviePage}></Route>
+        <Route path="/movies" component={MovieSearch}></Route>
 
         <Footer></Footer>
       </Router>

@@ -8,6 +8,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #111111;
+  padding: 0px 10%;
 }
 
 .NavBarContainer a {
@@ -20,7 +22,7 @@
   margin-left: 0px;
 }
 
-.NavBarContainer div {
+.NavBarContainer .SeachBar {
   margin-left: auto;
   background: #5cc3dc;
   border-radius: 20px;
@@ -37,7 +39,7 @@
           align-items: center;
 }
 
-.NavBarContainer div input {
+.NavBarContainer .SeachBar input {
   width: 260px;
   padding: 0px 10px;
   color: white;
@@ -51,31 +53,31 @@
   box-shadow: none;
 }
 
-.NavBarContainer div input:focus {
+.NavBarContainer .SeachBar input:focus {
   outline: none;
 }
 
-.NavBarContainer div input::-webkit-input-placeholder {
+.NavBarContainer .SeachBar input::-webkit-input-placeholder {
   color: white;
   opacity: 1;
 }
 
-.NavBarContainer div input:-ms-input-placeholder {
+.NavBarContainer .SeachBar input:-ms-input-placeholder {
   color: white;
   opacity: 1;
 }
 
-.NavBarContainer div input::-ms-input-placeholder {
+.NavBarContainer .SeachBar input::-ms-input-placeholder {
   color: white;
   opacity: 1;
 }
 
-.NavBarContainer div input::placeholder {
+.NavBarContainer .SeachBar input::placeholder {
   color: white;
   opacity: 1;
 }
 
-.NavBarContainer div span {
+.NavBarContainer .SeachBar span {
   display: block;
   width: 20px;
   height: 20px;
