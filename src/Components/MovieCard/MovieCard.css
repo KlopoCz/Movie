@@ -21,6 +21,8 @@
   font-weight: bold;
   font-size: 14px;
   line-height: 19px;
+  color: white;
+  text-decoration: none;
   letter-spacing: 0.08em;
   text-align: center;
   position: relative;
@@ -33,6 +35,8 @@
   font-weight: normal;
   font-size: 13px;
   line-height: 180.18%;
+  color: white;
+  text-decoration: none;
   text-align: center;
   letter-spacing: 0.105em;
   position: relative;

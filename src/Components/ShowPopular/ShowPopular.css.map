@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,qBAAqB,CAAC;EACpB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG;EACnB,UAAU,EAAE,MAAM;EAClB,UAAU,EAAE,MAAM;CACnB",
     "sources": [
         "ShowPopular.scss"
     ],

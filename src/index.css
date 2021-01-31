@@ -6,7 +6,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: white;
   overflow-x: hidden;
-  background: #000000;
+  background: #050505;
+}
+a {
+  text-decoration: none;
 }
 
 code {

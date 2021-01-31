@@ -17,7 +17,24 @@ const HomePage = () => {
           <BackgroundImg></BackgroundImg>
         </div>
         <NavBar showSearchBar={true}></NavBar>
-        <ShowPopular></ShowPopular>
+        <ShowPopular
+          url={
+            "https://api.themoviedb.org/3/movie/upcoming?api_key=de27f42e716edbcbf3d004f4f825bc85&language=en-US&page=1"
+          }
+          name="Upcoming"
+        ></ShowPopular>
+        <ShowPopular
+          url={
+            "https://api.themoviedb.org/3/movie/top_rated?api_key=de27f42e716edbcbf3d004f4f825bc85&language=en-US&page=1"
+          }
+          name="Top Rated"
+        ></ShowPopular>
+        <ShowPopular
+          url={
+            "https://api.themoviedb.org/3/movie/popular?api_key=de27f42e716edbcbf3d004f4f825bc85&language=en-US&page=1"
+          }
+          name="Popular"
+        ></ShowPopular>
       </Context.Provider>{" "}
     </div>
   );
