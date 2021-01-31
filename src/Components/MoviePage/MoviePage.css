@@ -278,6 +278,32 @@
   margin-right: 10px;
 }
 
+.video {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.SecondRowContainer {
+  margin: 0px 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.ReviewsContainer {
+  padding: 20px;
+  display: block;
+  min-width: 200px;
+  background: #111111;
+  height: 473px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
 @media only screen and (max-width: 1000px) {
   .MoviePageBackgroundImg {
     -webkit-box-orient: vertical;

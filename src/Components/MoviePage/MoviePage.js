@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import SvgCircle from "./../SvgCircle/SvgCircle";
 import NavBar from "./../NavBar/NavBar";
 import "./MoviePage.css";
+import ReactPlayer from "react-player";
 
 const MoviePage = ({ location }) => {
   const [movieData, setMovieData] = useState();
+  const [video, setVideo] = useState();
+  const [reviews, setReviews] = useState();
   const [radius, setRadius] = useState();
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -16,8 +19,27 @@ const MoviePage = ({ location }) => {
       .then((response) => response.json())
       .then((data) => {
         setMovieData(data);
-        console.log(data);
+
         setRadius(((2 * 3.141592654 * 25) / 100) * data.vote_average * 10);
+        fetch(
+          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${data.original_title}%20Official%20trailer&key=
+      AIzaSyCFhEbfu54bUfeDuNW6nZejM8F59JWUkkY
+      `
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            setVideo(data);
+
+            fetch(
+              `https://api.themoviedb.org/3/movie/${q}/reviews?api_key=de27f42e716edbcbf3d004f4f825bc85&language=en-US&page=1
+          `
+            )
+              .then((response) => response.json())
+              .then((data) => {
+                setReviews(data.results);
+                console.log(data);
+              });
+          });
       });
   }, []);
   return (
@@ -141,6 +163,36 @@ const MoviePage = ({ location }) => {
               }}
               className="MoviePageImg"
             ></div>
+          </div>
+          {/* <ReactPlayer
+            url={`https://www.youtube.com/watch?v=${video.items[0].id.videoId}`}
+          /> */}
+          <div className="SecondRowContainer">
+            {video ? (
+              <iframe
+                id="video"
+                width="840"
+                height="473"
+                src={`https://www.youtube.com/embed/${video.items[0].id.videoId}`}
+                frameborder="0"
+                allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                className="video"
+              ></iframe>
+            ) : (
+              ""
+            )}
+            {reviews ? (
+              <div className="ReviewsContainer">
+                <h1>Reviews</h1>
+                <div>
+                  <p>{reviews[0].content}</p>
+                  <h2>by {reviews[0].author}</h2>
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       ) : (
