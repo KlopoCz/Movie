@@ -14,7 +14,7 @@ const MoviePage = ({ location }) => {
     const q = params.get("q");
     console.log(q);
     fetch(
-      `https://api.themoviedb.org/3/movie/${q}?api_key=de27f42e716edbcbf3d004f4f825bc85&language=en-US`
+      `https://api.themoviedb.org/3/movie/${q}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -23,7 +23,7 @@ const MoviePage = ({ location }) => {
         setRadius(((2 * 3.141592654 * 25) / 100) * data.vote_average * 10);
         fetch(
           `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${data.original_title}%20Official%20trailer&key=
-      AIzaSyCFhEbfu54bUfeDuNW6nZejM8F59JWUkkY
+          ${process.env.REACT_APP_YOUTUBE_KEY}
       `
         )
           .then((response) => response.json())
@@ -31,7 +31,7 @@ const MoviePage = ({ location }) => {
             setVideo(data);
 
             fetch(
-              `https://api.themoviedb.org/3/movie/${q}/reviews?api_key=de27f42e716edbcbf3d004f4f825bc85&language=en-US&page=1
+              `https://api.themoviedb.org/3/movie/${q}/reviews?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1
           `
             )
               .then((response) => response.json())

@@ -12,14 +12,14 @@ const HeroSection = () => {
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=de27f42e716edbcbf3d004f4f825bc85&language=en-US&page=1"
+      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
     )
       .then((response) => response.json())
       .then((data) => {
         setBestMovie(data.results);
 
         fetch(
-          `https://api.themoviedb.org/3/movie/${data.results[value].id}?api_key=de27f42e716edbcbf3d004f4f825bc85&language=en-US`
+          `https://api.themoviedb.org/3/movie/${data.results[value].id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
         )
           .then((response) => response.json())
           .then((data) => {
@@ -38,7 +38,7 @@ const HeroSection = () => {
       setValue(value + 1);
     }
     fetch(
-      `https://api.themoviedb.org/3/movie/${bestMovie[value].id}?api_key=de27f42e716edbcbf3d004f4f825bc85&language=en-US`
+      `https://api.themoviedb.org/3/movie/${bestMovie[value].id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     )
       .then((response) => response.json())
       .then((data) => {

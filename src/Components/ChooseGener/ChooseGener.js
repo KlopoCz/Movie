@@ -14,7 +14,7 @@ const ChooseGener = () => {
   useEffect(() => {
     setPage(0);
     fetch(
-      "https://api.themoviedb.org/3/genre/movie/list?api_key=de27f42e716edbcbf3d004f4f825bc85&language=en-US"
+      `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -27,7 +27,7 @@ const ChooseGener = () => {
       setMovies([]);
       setId();
       fetch(
-        `https://api.themoviedb.org/3/search/movie?api_key=de27f42e716edbcbf3d004f4f825bc85&language=en-US&query=${search}&page=${num}&include_adult=false`
+        `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${search}&page=${num}&include_adult=false`
       )
         .then((response) => response.json())
         .then((data) => {
@@ -45,7 +45,7 @@ const ChooseGener = () => {
       setSearch("");
       setPage(0);
       fetch(
-        `https://api.themoviedb.org/3/discover/movie?api_key=de27f42e716edbcbf3d004f4f825bc85&with_genres=${id}&page=${num}`
+        `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=${id}&page=${num}`
       )
         .then((response) => response.json())
         .then((data) => {
