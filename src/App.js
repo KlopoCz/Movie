@@ -5,6 +5,8 @@ import MovieSearch from "./Components/MovieSearch/MovieSearch";
 
 import "./App.css";
 import { Route, BrowserRouter as Router } from "react-router-dom";
+import NavBar from "./Components/NavBar/NavBar";
+import About from "./Components/About/About";
 
 function App() {
   return (
@@ -14,6 +16,10 @@ function App() {
 
         <Route path="/movie" component={MoviePage}></Route>
         <Route path="/movies" component={MovieSearch}></Route>
+        <Route path="/about">
+          <NavBar showSearchBar={true}></NavBar>
+          <About></About>
+        </Route>
 
         <Footer></Footer>
       </Router>
