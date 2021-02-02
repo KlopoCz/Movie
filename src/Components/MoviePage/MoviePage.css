@@ -37,7 +37,7 @@
   -ms-flex-negative: 0;
       flex-shrink: 0;
   margin-left: 50px;
-  margin-right: 50px;
+  margin-right: 10%;
 }
 
 .MoviePgeContentContainer {
@@ -281,10 +281,11 @@
 .video {
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  margin-right: 20px;
 }
 
 .SecondRowContainer {
-  margin: 0px 10%;
+  margin: 20px 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -299,9 +300,24 @@
   display: block;
   min-width: 200px;
   background: #111111;
-  height: 473px;
-  overflow: scroll;
+  height: 483px;
+  overflow: auto;
   overflow-x: hidden;
+}
+
+@media only screen and (max-width: 1400px) {
+  .SecondRowContainer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .SecondRowContainer iframe {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-right: 0px;
+  }
+  .ReviewsContainer {
+    margin-bottom: 20px;
+  }
 }
 
 @media only screen and (max-width: 1000px) {

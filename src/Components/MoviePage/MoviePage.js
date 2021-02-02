@@ -3,12 +3,14 @@ import SvgCircle from "./../SvgCircle/SvgCircle";
 import NavBar from "./../NavBar/NavBar";
 import "./MoviePage.css";
 import ReactPlayer from "react-player";
+import ShowPopular from "./../ShowPopular/ShowPopular";
 
 const MoviePage = ({ location }) => {
   const [movieData, setMovieData] = useState();
   const [video, setVideo] = useState();
-  const [reviews, setReviews] = useState();
+  const [reviews, setReviews] = useState("");
   const [radius, setRadius] = useState();
+  const [num, setNum] = useState(0);
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const q = params.get("q");
@@ -42,6 +44,14 @@ const MoviePage = ({ location }) => {
           });
       });
   }, []);
+
+  const changeNum = () => {
+    if (reviews.length > num + 1) {
+      setNum((old) => old + 1);
+    } else {
+      setNum(0);
+    }
+  };
   return (
     <div>
       <NavBar showSearchBar={true}></NavBar>
@@ -171,8 +181,8 @@ const MoviePage = ({ location }) => {
             {video ? (
               <iframe
                 id="video"
-                width="840"
-                height="473"
+                width="50%"
+                height="523"
                 src={`https://www.youtube.com/embed/${video.items[0].id.videoId}`}
                 frameborder="0"
                 allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -182,18 +192,22 @@ const MoviePage = ({ location }) => {
             ) : (
               ""
             )}
-            {reviews ? (
-              <div className="ReviewsContainer">
+            {reviews.length !== 0 ? (
+              <div className="ReviewsContainer" onClick={changeNum}>
                 <h1>Reviews</h1>
                 <div>
-                  <p>{reviews[0].content}</p>
-                  <h2>by {reviews[0].author}</h2>
+                  <p>{reviews[num].content}</p>
+                  <h2>by {reviews[num].author}</h2>
                 </div>
               </div>
             ) : (
               ""
             )}
           </div>
+          <ShowPopular
+            url={`https://api.themoviedb.org/3/movie/${movieData.id}/recommendations?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`}
+            name="Recomended for you"
+          ></ShowPopular>
         </div>
       ) : (
         "Loding..."

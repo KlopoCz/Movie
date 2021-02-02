@@ -14,21 +14,15 @@ const ShowPopular = ({ url, name }) => {
   }, []);
   return (
     <div>
-      <h1>{name}</h1>
+      <h1 className="ShowPopularTitle">{name}</h1>
       <div className="ShowPopularContainer">
-        {movieDate ? (
-          movieDate.filter((item) => item).length > 1 ? (
-            movieDate.map((el, index) => {
-              return <MovieCard key={index} el={el}></MovieCard>;
-            })
-          ) : (
-            <h1 className="description">
-              ↑ click on some gener to see all of your favourite movies ↑
-            </h1>
-          )
-        ) : (
-          ""
-        )}
+        {movieDate
+          ? movieDate.filter((item) => item).length > 1
+            ? movieDate.map((el, index) => {
+                return <MovieCard key={index} el={el}></MovieCard>;
+              })
+            : ""
+          : ""}
       </div>
     </div>
   );

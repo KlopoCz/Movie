@@ -37,6 +37,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 0px;
 }
 
 .NavBarContainer .SeachBar input {
@@ -84,5 +85,27 @@
   background: url(./../../img/Search.svg);
   background-position: center;
   background-size: cover;
+}
+
+@media only screen and (max-width: 750px) {
+  .NavBarContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 10vh;
+    margin: 0px;
+  }
+  .NavBarContainer .SeachBar {
+    width: 255px;
+    margin: 0;
+    margin-top: 20px;
+  }
+  .NavBarContainer a:nth-child(1) {
+    margin-left: 30px;
+  }
 }
 /*# sourceMappingURL=NavBar.css.map */

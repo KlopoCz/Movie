@@ -8,5 +8,15 @@
           flex-direction: row;
   overflow-x: scroll;
   overflow-y: hidden;
+  margin: 20px 10%;
+}
+
+.ShowPopularTitle {
+  margin: 40px 10% 20px 10%;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: 0.08em;
 }
 /*# sourceMappingURL=ShowPopular.css.map */
