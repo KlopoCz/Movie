@@ -12,11 +12,9 @@ const HomePage = () => {
   return (
     <div>
       <Context.Provider value={{ img, setImg }}>
-        <div className="HomeCont">
-          <HeroSection></HeroSection>
-          <BackgroundImg></BackgroundImg>
-        </div>
         <NavBar showSearchBar={true}></NavBar>
+        <HeroSection></HeroSection>
+
         <ShowPopular
           url={`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`}
           name="Upcoming"
