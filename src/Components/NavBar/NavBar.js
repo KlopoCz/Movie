@@ -10,10 +10,14 @@ const NavBar = ({ showSearchBar }) => {
         <a href="/about">About</a>
       </div>
       {showSearchBar ? (
-        <a className="SeachBar" href="/movies">
-          <input placeholder="search..."></input>
-          <span></span>
-        </a>
+        <div className="NavBarButtonsContainer">
+          <a className="SeachBar" href="/movies">
+            <span></span>
+          </a>
+          <a className="ViewAddButton" href="/saved">
+            <span></span>
+          </a>
+        </div>
       ) : (
         ""
       )}

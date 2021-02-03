@@ -1,0 +1,66 @@
+.MovieCardsContainer {
+  min-height: 90vh;
+}
+
+.FavouriteMovieCardContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.FavouriteMovieCardContainer:hover .removeButton {
+  -webkit-transform: translate(0, 20px);
+          transform: translate(0, 20px);
+  opacity: 1;
+}
+
+.removeButton {
+  position: relative;
+  opacity: 0;
+  -webkit-transform: translate(0, -10px);
+          transform: translate(0, -10px);
+  width: 90px;
+  height: 20px;
+  border-radius: 40px;
+  background: red;
+  -webkit-transition: -webkit-transform opacity ease-in;
+  transition: -webkit-transform opacity ease-in;
+  transition: transform opacity ease-in;
+  transition: transform opacity ease-in, -webkit-transform opacity ease-in;
+  margin-right: 40px;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  /* identical to box height */
+  letter-spacing: 0.235em;
+  color: #a90000;
+}
+
+.saveddescription {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 19px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+/*# sourceMappingURL=Saved.css.map */

@@ -5,7 +5,7 @@ import ChooseGener from "./../ChooseGener/ChooseGener";
 const MovieSearch = () => {
   return (
     <div>
-      <NavBar showSearchBar={false}></NavBar>
+      <NavBar showSearchBar={true}></NavBar>
       <ChooseGener></ChooseGener>
     </div>
   );

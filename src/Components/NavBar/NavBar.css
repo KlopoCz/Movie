@@ -22,9 +22,19 @@
   margin-left: 0px;
 }
 
+.NavBarContainer .NavBarButtonsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-left: auto;
+}
+
 .NavBarContainer .SeachBar {
   margin-left: auto;
-  background: #5cc3dc;
   border-radius: 20px;
   padding-right: 10px;
   display: -webkit-box;
@@ -40,44 +50,6 @@
   margin-right: 0px;
 }
 
-.NavBarContainer .SeachBar input {
-  width: 260px;
-  padding: 0px 10px;
-  color: white;
-  border: none;
-  height: 25px;
-  -webkit-appearance: none;
-  border: none;
-  background-image: none;
-  background: transparent;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.NavBarContainer .SeachBar input:focus {
-  outline: none;
-}
-
-.NavBarContainer .SeachBar input::-webkit-input-placeholder {
-  color: white;
-  opacity: 1;
-}
-
-.NavBarContainer .SeachBar input:-ms-input-placeholder {
-  color: white;
-  opacity: 1;
-}
-
-.NavBarContainer .SeachBar input::-ms-input-placeholder {
-  color: white;
-  opacity: 1;
-}
-
-.NavBarContainer .SeachBar input::placeholder {
-  color: white;
-  opacity: 1;
-}
-
 .NavBarContainer .SeachBar span {
   display: block;
   width: 20px;
@@ -87,25 +59,36 @@
   background-size: cover;
 }
 
-@media only screen and (max-width: 750px) {
-  .NavBarContainer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    height: 10vh;
-    margin: 0px;
-  }
-  .NavBarContainer .SeachBar {
-    width: 255px;
-    margin: 0;
-    margin-top: 20px;
-  }
-  .NavBarContainer a:nth-child(1) {
-    margin-left: 30px;
+.NavBarContainer .ViewAddButton {
+  margin-left: auto;
+  border-radius: 20px;
+  padding-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 0px;
+}
+
+.NavBarContainer .ViewAddButton span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(./../../img/Plus.svg);
+  background-position: center;
+  background-size: cover;
+  margin-left: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  .NavBarContainer a {
+    margin: 0px 10px;
   }
 }
 /*# sourceMappingURL=NavBar.css.map */

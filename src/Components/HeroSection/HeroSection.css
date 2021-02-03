@@ -104,6 +104,7 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  margin-top: 10px;
 }
 
 .AddContainer {
@@ -119,7 +120,9 @@
 
 .AddContainer span {
   display: block;
-  background-image: url(./../../img/Plus.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 28px;
   height: 28px;
   margin-right: 10px;
@@ -211,10 +214,10 @@
           justify-content: flex-start;
   padding: 0;
   list-style: none;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
+  margin-top: 0px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 0;
 }
 
 .InfoContainer li {

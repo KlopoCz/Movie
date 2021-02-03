@@ -4,6 +4,8 @@ import NavBar from "./../NavBar/NavBar";
 import "./MoviePage.css";
 import ReactPlayer from "react-player";
 import ShowPopular from "./../ShowPopular/ShowPopular";
+import Checked from "./../../img/Checked.svg";
+import Plus from "./../../img/Plus.svg";
 
 const MoviePage = ({ location }) => {
   const [movieData, setMovieData] = useState();
@@ -11,6 +13,8 @@ const MoviePage = ({ location }) => {
   const [reviews, setReviews] = useState("");
   const [radius, setRadius] = useState();
   const [num, setNum] = useState(0);
+  const [saved, setSaved] = useState(Plus);
+
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const q = params.get("q");
@@ -21,6 +25,11 @@ const MoviePage = ({ location }) => {
       .then((response) => response.json())
       .then((data) => {
         setMovieData(data);
+        Object.keys(localStorage).forEach(function (key) {
+          if (key === data.original_title) {
+            setSaved(Checked);
+          }
+        });
 
         setRadius(((2 * 3.141592654 * 25) / 100) * data.vote_average * 10);
         fetch(
@@ -50,6 +59,16 @@ const MoviePage = ({ location }) => {
       setNum((old) => old + 1);
     } else {
       setNum(0);
+    }
+  };
+  const addToFavourite = () => {
+    if (saved === Checked) {
+      localStorage.removeItem(movieData.original_title);
+      setSaved(Plus);
+    } else {
+      localStorage.setItem(movieData.original_title, JSON.stringify(movieData));
+
+      setSaved(Checked);
     }
   };
   return (
@@ -125,8 +144,12 @@ const MoviePage = ({ location }) => {
                   <h1>User Score</h1>
                 </div>
                 <div className="MovieButtonsContainer">
-                  <span className="first"></span>
-                  <span className="last"></span>
+                  <span
+                    className="first"
+                    onClick={addToFavourite}
+                    style={{ backgroundImage: `url(${saved})` }}
+                  ></span>
+                  <h1>Add</h1>
                 </div>
               </div>
               <h1 className="MoviePageOverview">Overview</h1>

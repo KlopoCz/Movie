@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import "./HeroSection.css";
 import { Context } from "./../Context";
 import SvgCircle from "./../SvgCircle/SvgCircle";
+import Checked from "./../../img/Checked.svg";
+import Plus from "./../../img/Plus.svg";
 
 const HeroSection = () => {
   const [bestMovie, setBestMovie] = useState();
@@ -9,6 +11,7 @@ const HeroSection = () => {
   const [value, setValue] = useState(0);
   const [radius, setRadius] = useState(0);
   const { img, setImg } = useContext(Context);
+  const [saved, setSaved] = useState(Plus);
 
   useEffect(() => {
     fetch(
@@ -28,6 +31,12 @@ const HeroSection = () => {
             setImg(data.backdrop_path);
             setValue(value + 1);
             setRadius(((2 * 3.141592654 * 25) / 100) * data.vote_average * 10);
+
+            Object.keys(localStorage).forEach(function (key) {
+              if (key === data.original_title) {
+                setSaved(Checked);
+              }
+            });
           });
       });
   }, []);
@@ -48,14 +57,25 @@ const HeroSection = () => {
         setRadius(((2 * 3.141592654 * 25) / 100) * data.vote_average * 10);
       });
   };
-
+  const addToFavourite = () => {
+    if (saved === Checked) {
+      localStorage.removeItem(bestMovieDet.original_title);
+      setSaved(Plus);
+    } else {
+      localStorage.setItem(
+        bestMovieDet.original_title,
+        JSON.stringify(bestMovieDet)
+      );
+      setSaved(Checked);
+    }
+  };
   return (
     <div className="container">
       {bestMovieDet ? (
         <div>
           <div
             className="BlackFade"
-            onClick={add}
+            // onClick={add}
             style={{
               backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${bestMovieDet.backdrop_path}) `,
             }}
@@ -74,19 +94,19 @@ const HeroSection = () => {
                 ></SvgCircle>
                 <h1 className="score">User Score </h1>
               </div>
-              <p className="overview">
-                {bestMovieDet.overview.substring(0, 230)} Read More
-              </p>
+              <p className="overview">{bestMovieDet.overview}</p>
 
               <p className="tagline"> {bestMovieDet.tagline}</p>
               <div className="ButtonsContainer">
-                <div className="AddContainer">
-                  <span></span>
+                <div className="AddContainer" onClick={addToFavourite}>
+                  <span style={{ backgroundImage: `url(${saved})` }}></span>
                   <h1>Add</h1>
                 </div>
                 <div className="PlayContainer">
                   <span></span>
-                  <h1>See More</h1>
+                  <h1>
+                    <a href={`/movie?q=${bestMovieDet.id}`}>See More</a>
+                  </h1>
                 </div>
               </div>
               <ul className="InfoContainer">
@@ -152,12 +172,14 @@ const HeroSection = () => {
                 )}
               </ul>
             </div>
-            <div
-              style={{
-                backgroundImage: `url(https://image.tmdb.org/t/p/w400/${bestMovieDet.poster_path}) `,
-              }}
-              className="HeroPageImg"
-            ></div>
+            <a href={`/movie?q=${bestMovieDet.id}`}>
+              <div
+                style={{
+                  backgroundImage: `url(https://image.tmdb.org/t/p/w400/${bestMovieDet.poster_path}) `,
+                }}
+                className="HeroPageImg"
+              ></div>
+            </a>
           </div>
         </div>
       ) : (
