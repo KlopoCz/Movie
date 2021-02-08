@@ -1,22 +1,23 @@
 import React from "react";
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 const NavBar = ({ showSearchBar }) => {
   return (
     <div className="NavBarContainer">
       <div>
-        <a href="/">Home</a>
-        <a href="/movies">Movies</a>
-        <a href="/about">About</a>
+        <Link to={`/`}>Home</Link>
+        <Link to={`/movies`}>Movies</Link>
+        <Link to="/about">About</Link>
       </div>
       {showSearchBar ? (
         <div className="NavBarButtonsContainer">
-          <a className="SeachBar" href="/movies">
+          <Link className="SeachBar" to="/movies">
             <span></span>
-          </a>
-          <a className="ViewAddButton" href="/saved">
+          </Link>
+          <Link className="ViewAddButton" to="/saved">
             <span></span>
-          </a>
+          </Link>
         </div>
       ) : (
         ""

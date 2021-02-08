@@ -11,7 +11,6 @@ const Saved = () => {
         setMovieData((old) => old.concat(JSON.parse(localStorage[i])));
       }
     }
-    console.log(movieData);
   }, []);
   const remove = (key, index) => {
     console.log(key);
@@ -27,7 +26,7 @@ const Saved = () => {
         {movieData.length !== 0 ? (
           movieData.map((el, index) => {
             return (
-              <div className="FavouriteMovieCardContainer">
+              <div key={index} className="FavouriteMovieCardContainer">
                 <MovieCard key={index} el={el}></MovieCard>
                 <div
                   className="removeButton"

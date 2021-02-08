@@ -8,10 +8,9 @@ const ShowPopular = ({ url, name }) => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.results);
         setMovieData(data.results);
       });
-  }, []);
+  }, [url]);
   return (
     <div>
       <h1 className="ShowPopularTitle">{name}</h1>

@@ -35,7 +35,6 @@ const ChooseGener = () => {
           if (data) {
             setMovies(data.results);
             setPage(data.total_pages);
-            console.log(data);
           }
         });
     }
@@ -52,17 +51,13 @@ const ChooseGener = () => {
           setMovies([]);
           setPage(data.total_pages);
           setMovies((old) => old.concat(data.results));
-          console.log(data);
         });
     }
   }, [id, num]);
 
   const getSelectectCallBack = (inedx) => {
-    console.log(inedx);
     setId(inedx);
     setNum(1);
-
-    console.log(movies);
   };
   return (
     <div className="Container">

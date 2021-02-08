@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SvgCircle from "./../SvgCircle/SvgCircle";
-import NavBar from "./../NavBar/NavBar";
 import "./MoviePage.css";
-import ReactPlayer from "react-player";
 import ShowPopular from "./../ShowPopular/ShowPopular";
 import Checked from "./../../img/Checked.svg";
 import Plus from "./../../img/Plus.svg";
@@ -18,7 +16,6 @@ const MoviePage = ({ location }) => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const q = params.get("q");
-    console.log(q);
     fetch(
       `https://api.themoviedb.org/3/movie/${q}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     )
@@ -48,11 +45,10 @@ const MoviePage = ({ location }) => {
               .then((response) => response.json())
               .then((data) => {
                 setReviews(data.results);
-                console.log(data);
               });
           });
       });
-  }, []);
+  }, [location]);
 
   const changeNum = () => {
     if (reviews.length > num + 1) {
@@ -73,7 +69,6 @@ const MoviePage = ({ location }) => {
   };
   return (
     <div>
-      <NavBar showSearchBar={true}></NavBar>
       {movieData ? (
         <div>
           <div
@@ -203,13 +198,14 @@ const MoviePage = ({ location }) => {
           <div className="SecondRowContainer">
             {video ? (
               <iframe
+                title="Movie Trilar "
                 id="video"
                 width="50%"
                 height="523"
                 src={`https://www.youtube.com/embed/${video.items[0].id.videoId}`}
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
                 className="video"
               ></iframe>
             ) : (

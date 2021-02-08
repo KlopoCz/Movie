@@ -3,7 +3,7 @@ import "./BackgroundImg.css";
 import { Context } from "./../Context";
 
 const BackgroundImg = () => {
-  const { img, setImg } = useContext(Context);
+  const { img } = useContext(Context);
   return (
     <div
       style={{

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./GenreButton.css";
 
 const GenreButton = ({ name, id, getSelectectCallBack, selected }) => {
-  const [ID, setID] = useState(id);
+  const [ID] = useState(id);
   return (
     <div
       style={selected ? { background: "#5AB3D8" } : { background: "#111111" }}

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import HeroSection from "./../HeroSection/HeroSection";
 import ShowPopular from "./../ShowPopular/ShowPopular";
-import BackgroundImg from "./../BackgroundImg/BackgroundImg";
-import NavBar from "./../NavBar/NavBar";
 import "./HomePage.css";
 
 import { Context } from "./../Context";
@@ -12,7 +10,6 @@ const HomePage = () => {
   return (
     <div>
       <Context.Provider value={{ img, setImg }}>
-        <NavBar showSearchBar={true}></NavBar>
         <HeroSection></HeroSection>
 
         <ShowPopular

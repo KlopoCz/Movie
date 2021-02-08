@@ -8,6 +8,7 @@ const Footer = () => {
         href="https://www.themoviedb.org/"
         className="LogoFooter"
         target="_blank"
+        rel="noreferrer"
       >
         <h1>site made with</h1>
         <span></span>
@@ -16,6 +17,7 @@ const Footer = () => {
         href="https://github.com/KlopoCz/Movie"
         className="GitHubFooter"
         target="_blank"
+        rel="noreferrer"
       >
         <span></span>
         <h1>GitHub</h1>

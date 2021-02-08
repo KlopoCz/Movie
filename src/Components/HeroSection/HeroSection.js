@@ -4,13 +4,13 @@ import { Context } from "./../Context";
 import SvgCircle from "./../SvgCircle/SvgCircle";
 import Checked from "./../../img/Checked.svg";
 import Plus from "./../../img/Plus.svg";
-
+import { Link } from "react-router-dom";
 const HeroSection = () => {
   const [bestMovie, setBestMovie] = useState();
   const [bestMovieDet, setBestMovieDet] = useState();
   const [value, setValue] = useState(0);
   const [radius, setRadius] = useState(0);
-  const { img, setImg } = useContext(Context);
+  const { setImg } = useContext(Context);
   const [saved, setSaved] = useState(Plus);
 
   useEffect(() => {
@@ -39,6 +39,7 @@ const HeroSection = () => {
             });
           });
       });
+    //eslint-dasable-next-line
   }, []);
   const add = () => {
     if (value === 19) {
@@ -90,7 +91,7 @@ const HeroSection = () => {
                   {bestMovieDet.original_title} (
                   {bestMovieDet.release_date.substring(0, 4)})
                 </h1>
-                <h1 className="year"></h1>
+
                 <div className="SVGcontainer">
                   <SvgCircle
                     radius={radius}
@@ -177,14 +178,14 @@ const HeroSection = () => {
                   )}
                 </ul>
               </div>
-              <a className="HeroPageImgA" href={`/movie?q=${bestMovieDet.id}`}>
+              <Link className="HeroPageImgA" to={`/movie?q=${bestMovieDet.id}`}>
                 <div
                   style={{
                     backgroundImage: `url(https://image.tmdb.org/t/p/w400/${bestMovieDet.poster_path}) `,
                   }}
                   className="HeroPageImg"
                 ></div>
-              </a>{" "}
+              </Link>{" "}
             </div>
             <div className="NextButton" onClick={add}></div>
           </div>{" "}
