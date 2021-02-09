@@ -3,6 +3,7 @@
 }
 
 .FavouriteMovieCardContainer {
+  width: 230px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,7 +38,6 @@
   transition: -webkit-transform opacity ease-in;
   transition: transform opacity ease-in;
   transition: transform opacity ease-in, -webkit-transform opacity ease-in;
-  margin-right: 40px;
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
   cursor: pointer;
@@ -62,5 +62,56 @@
   text-align: center;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.trails-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.trails-main-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.trails-text {
+  width: 230px;
+  height: 391px;
+  margin: 20px 20px 20px 20px;
+}
+
+.trails-idk {
+  max-height: 391px;
+  min-height: 391px;
+}
+
+.MovieCardContainer {
+  margin: 0;
 }
 /*# sourceMappingURL=Saved.css.map */

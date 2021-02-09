@@ -6,6 +6,7 @@
     transform: translate(0, 20px);
     opacity: 1;
   }
+  width: 230px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +21,7 @@
   border-radius: 40px;
   background: red;
   transition: transform opacity ease-in;
-  margin-right: 40px;
+  //margin-right: 40px;
   transition-duration: 0.1s;
   cursor: pointer;
 
@@ -45,4 +46,31 @@
   left: 50%;
   text-align: center;
   transform: translate(-50%, -50%);
+}
+.trails-main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.trails-main-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.trails-text {
+  width: 230px;
+  height: 391px;
+  margin: 20px 20px 20px 20px;
+}
+.trails-idk {
+  max-height: 391px;
+  min-height: 391px;
+}
+.MovieCardContainer {
+  margin: 0;
 }

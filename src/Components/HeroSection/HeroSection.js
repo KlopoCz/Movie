@@ -5,7 +5,7 @@ import SvgCircle from "./../SvgCircle/SvgCircle";
 import Checked from "./../../img/Checked.svg";
 import Plus from "./../../img/Plus.svg";
 import { Link } from "react-router-dom";
-const HeroSection = () => {
+const HeroSection = ({ callBack }) => {
   const [bestMovie, setBestMovie] = useState();
   const [bestMovieDet, setBestMovieDet] = useState();
   const [value, setValue] = useState(0);
@@ -27,7 +27,7 @@ const HeroSection = () => {
           .then((response) => response.json())
           .then((data) => {
             setBestMovieDet(data);
-
+            callBack(true);
             setImg(data.backdrop_path);
             setValue(value + 1);
             setRadius(((2 * 3.141592654 * 25) / 100) * data.vote_average * 10);

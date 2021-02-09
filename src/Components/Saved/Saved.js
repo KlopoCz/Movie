@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MovieCard from "../MovieCard/MovieCard";
 import "./Saved.css";
+import Trail from "./../Fetch";
 
 const Saved = () => {
   const [movieData, setMovieData] = useState([]);
@@ -21,13 +22,13 @@ const Saved = () => {
     setMovieData(array);
   };
   return (
-    <div>
-      <div className="MovieCardsContainer">
+    <div className="MovieCardsContainer">
+      <Trail open={true} className="trails-main">
         {movieData.length !== 0 ? (
           movieData.map((el, index) => {
             return (
               <div key={index} className="FavouriteMovieCardContainer">
-                <MovieCard key={index} el={el}></MovieCard>
+                <MovieCard el={el}></MovieCard>
                 <div
                   className="removeButton"
                   onClick={() => remove(el.original_title, index)}
@@ -41,7 +42,7 @@ const Saved = () => {
         ) : (
           <h1 className="saveddescription">no saved movies</h1>
         )}
-      </div>
+      </Trail>
     </div>
   );
 };

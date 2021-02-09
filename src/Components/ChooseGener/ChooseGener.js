@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ChooseGener.css";
 import GenreButton from "./../GenreButton/GenreButton";
 import MovieCard from "./../MovieCard/MovieCard";
+import Trail from "../Fetch";
 
 const ChooseGener = () => {
   const [allGenre, setAllGenre] = useState("");
@@ -58,6 +59,7 @@ const ChooseGener = () => {
   const getSelectectCallBack = (inedx) => {
     setId(inedx);
     setNum(1);
+    setMovies([]);
   };
   return (
     <div className="Container">
@@ -114,15 +116,17 @@ const ChooseGener = () => {
             ""
           )}
           <div className="MovieCardsContainer">
-            {movies.filter((item) => item).length > 1 ? (
-              movies.map((el, index) => {
-                return <MovieCard key={index} el={el}></MovieCard>;
-              })
-            ) : (
-              <h1 className="description">
-                ↑ click on some gener to see all of your favourite movies ↑
-              </h1>
-            )}
+            <Trail open={true} className="trails-main">
+              {movies.filter((item) => item).length > 1 ? (
+                movies.map((el, index) => {
+                  return <MovieCard key={index} el={el}></MovieCard>;
+                })
+              ) : (
+                <h1 className="description">
+                  ↑ click on some gener to see all of your favourite movies ↑
+                </h1>
+              )}
+            </Trail>
           </div>
 
           {page ? (
